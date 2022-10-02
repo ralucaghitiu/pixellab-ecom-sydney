@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
 import { FaApple } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,11 @@ export const Header = () => {
             setMenuOpen(!menuOpen);
           }}
         >
-          <CgMenu size="32"></CgMenu>
+          {menuOpen ? (
+            <AiOutlineClose size="32"></AiOutlineClose>
+          ) : (
+            <CgMenu size="32"></CgMenu>
+          )}
         </button>
       </section>
 
@@ -31,10 +36,16 @@ export const Header = () => {
           menuOpen ? 'top-0' : '-top-full'
         } h-screen w-screen text-white bg-neutral-900`}
       >
-        <ul>
+        <ul className="flex justify-center items-center h-full flex-col text-2xl uppercase font-bold gap-4">
           <li>
             <Link href="/">
-              <a title="Home">Home</a>
+              <a title="Shop">Shop</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/">
+              <a title="About">About</a>
             </Link>
           </li>
 
