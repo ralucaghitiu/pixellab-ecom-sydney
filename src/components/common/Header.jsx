@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
 import { FaApple } from 'react-icons/fa';
+import { FaFacebookF } from 'react-icons/fa';
+import { BsTwitter } from 'react-icons/bs';
+import { TiSocialGooglePlus } from 'react-icons/ti';
 import { AiOutlineClose } from 'react-icons/ai';
 
 export const Header = () => {
@@ -29,6 +32,42 @@ export const Header = () => {
             <CgMenu size="32"></CgMenu>
           )}
         </button>
+
+        <div className="hidden lg:block">
+          <ul className="flex lg:flex-col justify-between items-start gap-3">
+            <li className="hover:bg-white hover:text-neutral-900 p-3 rounded-full">
+              <Link href="https://www.facebook.com">
+                <a
+                  className="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF size={24}></FaFacebookF>
+                </a>
+              </Link>
+            </li>
+
+            <li className="hover:bg-white hover:text-neutral-900 p-3 rounded-full">
+              <Link href="https://www.twitter.com">
+                <a
+                  className="Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsTwitter size={24}></BsTwitter>
+                </a>
+              </Link>
+            </li>
+
+            <li className="hover:bg-white hover:text-neutral-900 p-3 rounded-full">
+              <Link href="https://www.google.com/">
+                <a className="Google">
+                  <TiSocialGooglePlus size={24} />
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         <div className="hidden lg:block">
           <span className="block w-4 h-4 bg-white rounded-full"></span>
