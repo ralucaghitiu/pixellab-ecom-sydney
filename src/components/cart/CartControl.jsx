@@ -1,6 +1,15 @@
 import Link from 'next/link';
+import { useContext, useState } from 'react';
+import { AppContext } from '../../pages/_app';
+import { BsCart4 } from 'react-icons/bs';
 
-export const CartControl = ({ cart }) => {
+export const CartControl = () => {
+  const { cart } = useContext(AppContext);
+
+  if (cart === null) {
+    return <></>;
+  }
+
   const { products } = cart;
 
   const cartQty = products.reduce((cartQty, product) => {
@@ -20,6 +29,7 @@ export const CartControl = ({ cart }) => {
             title="Cart"
           >
             {cartQty}
+            <BsCart4 size={34}></BsCart4>
           </a>
         </Link>
       </li>

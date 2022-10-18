@@ -2,32 +2,19 @@
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { baseUrl } from '../..';
-import { CartControl } from '../../components/cart';
+import { CartControl, ContinueShopping } from '../../components/cart';
 import { Layout } from '../../layouts';
 import { BiLoaderCircle } from 'react-icons/bi';
+import { useProduct } from '../../hooks';
+import { RelatedProducts, ProductReview } from '../../components/catalog';
+import { RiChatSettingsFill } from 'react-icons/ri';
 
 const ProductPage = () => {
   const router = useRouter();
   const { pid } = router.query;
-  const [product, setProduct] = useState(null);
+  const { product, status } = useProduct(pid);
 
-  useEffect(() => {
-    if (pid === undefined) {
-      return;
-    }
-
-    fetch(`${baseUrl}/products/${pid}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setProduct(result);
-      });
-  }, [pid]);
-
-  if (product === null) {
+  if (product === null && status !== '404') {
     return (
       <div className="flex h-screen w-screen justify-center items-center">
         <BiLoaderCircle size="48" className="animate-spin"></BiLoaderCircle>
@@ -35,7 +22,11 @@ const ProductPage = () => {
     );
   }
 
-  const { id, title, description, price, image } = product;
+  if (status === '404') {
+    return <span>Product not found</span>;
+  }
+
+  const { id, title, description, price, image, rating, category } = product;
   const formattedPrice = new Intl.NumberFormat('en-US', {
     currency: 'USD',
     style: 'currency',
@@ -50,7 +41,9 @@ const ProductPage = () => {
       <Layout>
         <main>
           <header className="container px-4 lg:px-0 mx-auto flex justify-between">
-            <div></div>
+            <div>
+              <ContinueShopping></ContinueShopping>
+            </div>
 
             <CartControl></CartControl>
           </header>
@@ -66,6 +59,10 @@ const ProductPage = () => {
 
             <header className="col-start-7 col-span-6 pt-12">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
+              <ProductReview
+                stars={rating.rate}
+                count={rating.count}
+              ></ProductReview>
               <p className="mt-12">{description}</p>
 
               <div className="mt-12">
@@ -89,7 +86,15 @@ const ProductPage = () => {
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto">jos</section>
+          <section className="container px-4 lg:px-0 mx-auto">
+            <h1 className="text-center uppercase mt-4 font-bold">
+              Related products
+            </h1>
+            <RelatedProducts
+              category={category}
+              relatedId={id}
+            ></RelatedProducts>
+          </section>
         </main>
       </Layout>
     </>

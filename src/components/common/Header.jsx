@@ -33,7 +33,7 @@ export const Header = () => {
           )}
         </button>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:block py-8">
           <ul className="flex lg:flex-col justify-between items-start gap-3">
             <li className="hover:bg-white hover:text-neutral-900 p-3 rounded-full">
               <Link href="https://www.facebook.com">
@@ -67,10 +67,6 @@ export const Header = () => {
               </Link>
             </li>
           </ul>
-        </div>
-
-        <div className="hidden lg:block">
-          <span className="block w-4 h-4 bg-white rounded-full"></span>
         </div>
       </section>
 

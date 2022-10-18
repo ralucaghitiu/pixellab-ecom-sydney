@@ -10,8 +10,8 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="container flex text-gray-500 p-6 justify-between flex-wrap mx-auto">
-        <section>
+      <div className="container px-4 lg:px-0 py-6 mx-auto grid grid-cols-2 gap-4 lg:grid-cols-4 items-center text-gray-500">
+        <section className="flex flex-col gap-2">
           <h1 className="font-bold uppercase text-gray-900">Los Angeles</h1>
           <ul>
             <li>145 Oliveshka Street,</li>
@@ -21,7 +21,7 @@ export const Footer = () => {
           </ul>
         </section>
 
-        <section>
+        <section className="flex flex-col gap-2">
           <h1 className="font-bold uppercase text-gray-900">San Fancisco</h1>
           <ul>
             <li>210 Pier Street,</li>
@@ -31,7 +31,7 @@ export const Footer = () => {
           </ul>
         </section>
 
-        <section>
+        <section className="flex flex-col gap-2">
           <h1 className="font-bold uppercase text-gray-900">New York</h1>
           <ul>
             <li>711 Snow Street,</li>
@@ -41,100 +41,104 @@ export const Footer = () => {
           </ul>
         </section>
 
-        <section>
-          <h1 className="font-bold uppercase text-gray-900">Follow Us</h1>
-          <ul>
-            <li>
-              <a
-                href="https://www.facebook.com/"
-                className="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.twitter.com/"
-                className="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/"
-                className="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/"
-                className="linkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </section>
+        <div className="grid grid-cols-2 gap-3">
+          <section className="flex flex-col gap-2">
+            <h1 className="font-bold uppercase text-gray-900">Follow Us</h1>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  className="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.twitter.com/"
+                  className="Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  className="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/"
+                  className="linkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </section>
 
-        <section>
-          <ul>
-            <li>
-              <a
-                href="https://dribbble.com/"
-                className="dribbble"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Dribbble
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.behance.net/"
-                className="behance"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Behance
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://ro.pinterest.com/"
-                className="pinterest"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Pinterest
-              </a>
-            </li>
-          </ul>
-        </section>
+          <section>
+            <ul>
+              <li>
+                <a
+                  href="https://dribbble.com/"
+                  className="dribbble"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Dribbble
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.behance.net/"
+                  className="behance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Behance
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://ro.pinterest.com/"
+                  className="pinterest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Pinterest
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
       </div>
 
-      <div className="relative border-t m-6 border-gray-300">
+      <div className="relative m-6 border-gray-300">
         <button
-          className="absolute border border-gray-300 text-gray-500 rounded-full text-3xl p-2  bg-gray-100 left-1/2 -top-4 rotate-90l"
+          className="absolute border border-gray-300 text-gray-500 rounded-full text-3xl p-2 bg-gray-100 left-1/2 -top-4 rotate-90l"
           onClick={backToTop}
         >
           <RiArrowUpSLine size="30" />
         </button>
       </div>
 
+      <div className="border border-t border-gray-300"></div>
+
       <div className="m-6 border-gray-300">
-        <p className="text-center  text-gray-500 p-8">
-          &copy; 2018. Design by Unvab
+        <p className="text-center text-gray-500 p-8">
+          &copy; 2022. Design by Raluca
         </p>
       </div>
     </>
