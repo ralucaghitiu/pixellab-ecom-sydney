@@ -18,7 +18,7 @@ const Home = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 lg:px-0 mx-auto">
+        <main className="container px-4 mx-auto">
           <header className="flex justify-end text-zinc-400">
             <GridControls setPerRow={setPerRow}></GridControls>
 

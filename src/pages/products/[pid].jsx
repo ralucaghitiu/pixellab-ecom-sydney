@@ -86,7 +86,7 @@ const ProductPage = () => {
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto">
+          <section className="container px-4 mx-auto">
             <h1 className="text-center uppercase mt-4 font-bold">
               Related products
             </h1>

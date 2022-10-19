@@ -23,7 +23,7 @@ const Cart = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 lg:px-0 mx-auto">
+        <main className="container px-4 mx-auto">
           <header className="flex justify-between text-zinc-400">
             <div>
               <ContinueShopping></ContinueShopping>
