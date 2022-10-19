@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="container px-4 lg:px-0 py-6 mx-auto grid grid-cols-2 gap-4 lg:grid-cols-4 items-center text-gray-500">
+      <div className="container px-4 lg:px-2 py-6 mx-auto grid grid-cols-2 gap-4 lg:grid-cols-4 items-center text-gray-500">
         <section className="flex flex-col gap-2">
           <h1 className="font-bold uppercase text-gray-900">Los Angeles</h1>
           <ul>
