@@ -3,3 +3,4 @@ export * from './ContinueShopping';
 export * from './CartItems';
 export * from './CartTotals';
 export * from './CartVoucher';
+export * from './Checkout';

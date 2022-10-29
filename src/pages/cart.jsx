@@ -23,7 +23,7 @@ const Cart = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 mx-auto">
+        <main className="container px-4 mx-auto mb-10">
           <header className="flex justify-between text-zinc-400">
             <div>
               <ContinueShopping></ContinueShopping>
@@ -32,13 +32,16 @@ const Cart = () => {
             <CartControl cart={cart}></CartControl>
           </header>
 
-          <section className="mt-16 grid grid-cols-12 gap-8">
-            <div className="col-span-8">
+          <section className="mt-16 grid lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-8 grid gap-y-10">
               <CartItems></CartItems>
-              <CartVoucher></CartVoucher>
+
+              <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <CartVoucher></CartVoucher>
+              </div>
             </div>
 
-            <aside className="col-span-4">
+            <aside className="lg:col-span-4">
               <CartTotals></CartTotals>
             </aside>
           </section>

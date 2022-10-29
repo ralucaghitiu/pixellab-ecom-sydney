@@ -38,9 +38,9 @@ export const CartLineItem = ({ product }) => {
           </a>
         </Link>
 
-        <div>
+        <div className="flex flex-col items-start justify-start gap-3">
           <Link href={`/products/${id}`}>
-            <a title="title" className="w-2/4 text-sm md:text-base">
+            <a title="title" className="font-medium">
               {title}
             </a>
           </Link>
@@ -50,9 +50,9 @@ export const CartLineItem = ({ product }) => {
           ></ProductReview>
         </div>
       </td>
-      <td className="w-1/6 text-sm md:text-base">{formattedPricePerProduct}</td>
-      <td className="w-1/6 px-6 md:p-0 text-sm md:text-base">{quantity}</td>
-      <td className="w-1/6 text-sm md:text-base">{formattedPrice}</td>
+      <td className="text-center px-2">{formattedPricePerProduct}</td>
+      <td className="text-center px-2">{quantity}</td>
+      <td className="text-center px-2">{formattedPrice}</td>
     </tr>
   );
 };

@@ -1,4 +1,4 @@
-import { RiArrowUpSLine } from 'react-icons/ri';
+import { BsArrowUpCircleFill } from 'react-icons/bs';
 
 export const Footer = () => {
   const backToTop = () => {
@@ -125,19 +125,16 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="relative m-6 border-gray-300">
-        <button
-          className="absolute border border-gray-300 text-gray-500 rounded-full text-3xl p-2 bg-gray-100 left-1/2 -top-4 rotate-90l"
-          onClick={backToTop}
-        >
-          <RiArrowUpSLine size="30" />
+      <div className="border border-t border-1-neutral mt-8"></div>
+
+      <div className="relative container px-4 lg:px-0 mx-auto flex items center justify-center lg:py-3 text-zinc-400">
+        <button className="absolute -top-5" onClick={backToTop}>
+          <BsArrowUpCircleFill size="44" />
         </button>
       </div>
 
-      <div className="border border-t border-gray-300"></div>
-
       <div className="m-6 border-gray-300">
-        <p className="text-center text-gray-500 p-8">
+        <p className="text-center text-gray-500 p-6">
           &copy; 2022. Design by Raluca
         </p>
       </div>

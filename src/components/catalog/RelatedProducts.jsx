@@ -13,7 +13,7 @@ export const RelatedProducts = ({ category, relatedId }) => {
       .then((result) => {
         setRelatedProducts(result);
       });
-  }, [setRelatedProducts]);
+  }, [category]);
 
   if (relatedProducts === null) {
     return <></>;
@@ -32,7 +32,7 @@ export const RelatedProducts = ({ category, relatedId }) => {
           return (
             <div className="basis-0 flex-1 text-center" key={id}>
               <section>
-                <Link href={`products/${id}`}>
+                <Link href={`/products/${id}`}>
                   <a title={title}>
                     <Image
                       src={image}
