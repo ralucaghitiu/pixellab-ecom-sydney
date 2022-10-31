@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useProduct } from '../../hooks';
+import { useContext } from 'react';
 import { ProductReview } from '../catalog';
+import { AppContext } from '../../pages/_app';
 
 export const CartLineItem = ({ product }) => {
   const { quantity, productId } = product;
   const { product: cartItem } = useProduct(productId);
   const isLoaded = cartItem !== null;
+  const { alterProduct } = useContext(AppContext);
 
   if (!isLoaded) {
     return <></>;
@@ -49,9 +52,36 @@ export const CartLineItem = ({ product }) => {
             count={rating.count}
           ></ProductReview>
         </div>
+        <td></td>
       </td>
       <td className="text-center px-2">{formattedPricePerProduct}</td>
-      <td className="text-center px-2">{quantity}</td>
+      <td>
+        <div className="border">
+          <div className="border">
+            <button
+              type="button"
+              title="Decrease"
+              className="p-4"
+              onClick={() => {
+                alterProduct(id, -1);
+              }}
+            >
+              -
+            </button>
+            {quantity}
+            <button
+              type="button"
+              title="Increase"
+              className="p-4"
+              onClick={() => {
+                alterProduct(id, 1);
+              }}
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </td>
       <td className="text-center px-2">{formattedPrice}</td>
     </tr>
   );
