@@ -31,25 +31,25 @@ export const RelatedProducts = ({ category, relatedId }) => {
 
         if (category === category && relatedId !== id) {
           return (
-            <div className="basis-0 flex-1 text-center" key={id}>
+            <div className="w-full text-center" key={id}>
               <section>
                 <Link href={`/products/${id}`}>
                   <a title={title}>
                     <Image
                       src={image}
                       width={250}
-                      height={500}
+                      height={250}
                       objectFit="contain"
                       className="inline -z-10"
                     ></Image>
                   </a>
                 </Link>
               </section>
-              <section>
+
+              <section className="flex flex-col mt-6 text-sm text-center items-center justify-between gap-4">
                 <h1 className="inline">{title}</h1>
                 <div className="text-zinc-900 font-bold">{formattedPrice}</div>
-              </section>
-              <section>
+
                 <div>
                   <AddToCart product={relatedProduct}></AddToCart>
                 </div>
