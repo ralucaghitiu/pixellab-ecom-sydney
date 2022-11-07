@@ -8,7 +8,11 @@ import { BiLoaderCircle } from 'react-icons/bi';
 import { useProduct } from '../../hooks';
 import Image from 'next/image';
 import { AddToCart } from '../../components/catalog';
-import { RelatedProducts, ProductReview } from '../../components/catalog';
+import {
+  RelatedProducts,
+  ProductReview,
+  RemoveFromCart,
+} from '../../components/catalog';
 import { RiChatSettingsFill } from 'react-icons/ri';
 
 const ProductPage = () => {
@@ -76,8 +80,9 @@ const ProductPage = () => {
                 </span>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-12 flex items-center">
                 <AddToCart product={product}></AddToCart>
+                <RemoveFromCart product={product}></RemoveFromCart>
               </div>
             </header>
           </section>

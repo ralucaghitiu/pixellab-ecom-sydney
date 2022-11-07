@@ -3,8 +3,8 @@ import { FaRegStar } from 'react-icons/fa';
 
 export const ProductReview = ({ stars, count }) => {
   return (
-    <div className="flex gap-3 my-3">
-      <div className="flex pt-2">
+    <div className="gap-3 my-3">
+      <div className="flex pt-2 text-sm lg:text-lg">
         {Array(5)
           .fill('_')
           .map((_, index) => {
@@ -18,9 +18,7 @@ export const ProductReview = ({ stars, count }) => {
             );
           })}
       </div>
-      <div>
-        {stars} {`(${count} reviews) `}
-      </div>
+      <div>{`${stars} stars (from ${count} reviews) `}</div>
     </div>
   );
 };

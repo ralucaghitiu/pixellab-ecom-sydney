@@ -19,14 +19,10 @@ export const CartItems = () => {
     <table className="flex justify-center items-center w-full flex-col">
       <thead className="w-full border-b">
         <tr className="flex w-full mb-3 uppercase">
-          <th className="text-sm lg:text-base w-4/12 lg:w-3/6">Product</th>
-          <th className="text-sm lg:text-base w-4/12 lg:w-1/3 p-0 md:pl-18">
-            Price
-          </th>
-          <th className="text-sm lg:text-base w-4/12 lg:w-1/3 p-0">Quantity</th>
-          <th className="text-sm lg:text-base w-4/12 lg:w-1/3 p-0 lg:pr-18">
-            Total
-          </th>
+          <th className="text-sm lg:text-base w-4/12 ml-8 lg:ml-5">Product</th>
+          <th className="text-sm lg:text-base w-3/12 ml-12 lg:ml-20">Price</th>
+          <th className="text-sm lg:text-base w-2/12 lg:ml-15">Quantity</th>
+          <th className="text-sm lg:text-base w-3/12 ml-4 lg:ml-2">Total</th>
         </tr>
       </thead>
 
