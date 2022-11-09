@@ -72,7 +72,7 @@ const ProductPage = () => {
                 stars={rating.rate}
                 count={rating.count}
               ></ProductReview>
-              <p className="mt-12">{description}</p>
+              <div className="mt-12">{description}</div>
 
               <div className="mt-12">
                 <span className="text-3xl leading-9 font-bold">
@@ -87,7 +87,7 @@ const ProductPage = () => {
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 mx-auto mt-10">
+          <section className="container px-4 lg:px-0 mx-auto mt-10">
             <h1 className="text-center uppercase mt-4 font-bold">
               Related products
             </h1>

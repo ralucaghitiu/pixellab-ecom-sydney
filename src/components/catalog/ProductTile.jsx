@@ -28,12 +28,12 @@ export const ProductTile = ({ product }) => {
         </div>
       </header>
 
-      <section className="mt-8 text-center text-sm">
+      <section className="text-center text-sm flex flex-col items-center justify-between mt-6 gap-3">
         <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
 
         <div className="text-zinc-900 font-light">{formattedPrice}</div>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center my-3">
           <AddToCart product={product}></AddToCart>
           <RemoveFromCart product={product}></RemoveFromCart>
         </div>

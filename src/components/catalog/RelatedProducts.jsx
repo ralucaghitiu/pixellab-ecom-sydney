@@ -21,7 +21,7 @@ export const RelatedProducts = ({ category, relatedId }) => {
   }
 
   return (
-    <div className="flex flex-row justify-between gap-2 my-4 mx-0">
+    <div className="flex flex-col lg:flex-row justify-between gap-2 my-4 mx-0">
       {relatedProducts.map((relatedProduct) => {
         const { title, price, image, id } = relatedProduct;
         const formattedPrice = new Intl.NumberFormat('en-US', {
