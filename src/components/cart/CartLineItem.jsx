@@ -95,7 +95,7 @@ export const CartLineItem = ({ product }) => {
         </div>
       </td>
       <td className="w-1/6 text-sm lg:text-base">{formattedPricePerProduct}</td>
-      <td>
+      {/* <td>
         {singleProduct ? (
           <button type="button" title="remove from cart" onClick={onClick}>
             <BsTrash
@@ -106,11 +106,11 @@ export const CartLineItem = ({ product }) => {
         ) : (
           <></>
         )}
-      </td>
+      </td> */}
 
       <td className="w-1/6 text-sm px-4 lg:p-0 lg:text-center lg:text-base lg:mr-6">
         <div className="border flex flex-col lg:flex-row items-center justify-center">
-          <button
+          {/* <button
             type="button"
             title="Decrease"
             className="p-4"
@@ -119,8 +119,29 @@ export const CartLineItem = ({ product }) => {
             }}
           >
             -
-          </button>
+          </button> */}
+          {quantity === 1 ? (
+            <span className="cursor-pointer">
+              <BsTrash
+                onClick={() => {
+                  alterProduct(id, -1);
+                }}
+              ></BsTrash>
+            </span>
+          ) : (
+            <button
+              type="button"
+              title="Decrease"
+              className="p-2"
+              onClick={() => {
+                alterProduct(id, -1);
+              }}
+            >
+              -
+            </button>
+          )}
           {quantity}
+
           <button
             type="button"
             title="Increase"

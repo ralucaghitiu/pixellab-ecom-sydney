@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { AddToCart } from './AddToCart';
+import { AddToCart, RemoveFromCart } from '../../components/catalog';
 
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
@@ -33,7 +33,10 @@ export const ProductTile = ({ product }) => {
 
         <div className="text-zinc-900 font-light">{formattedPrice}</div>
 
-        <AddToCart product={product}></AddToCart>
+        <div className="flex items-center justify-center">
+          <AddToCart product={product}></AddToCart>
+          <RemoveFromCart product={product}></RemoveFromCart>
+        </div>
       </section>
     </article>
   );
